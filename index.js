@@ -1,7 +1,9 @@
+// get functions from other files, and include necessary installations
 const inquirer = require('inquirer')
 const generateMarkdown = require('./utils/generateMarkdown')
 const writeToFile = require('./utils/generateFile')
 
+// This is the user prompt. The values passed from this will be used to create a README
 const promptUser = () => {
     return inquirer
         .prompt([
@@ -93,7 +95,7 @@ const promptUser = () => {
         ])
 }
 
-
+// prompt user, then pass response into function that generated markdown from it, then write that content into a new file;
 promptUser().then(userResponse => {
     const markdownData = generateMarkdown(userResponse)
     writeToFile(markdownData);

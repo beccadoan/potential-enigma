@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// takes a license input from the user prompt and creates a license badge and url
 function renderLicenseBadge(license) {
   let licenseInfo = {
     Apache: {
@@ -23,6 +22,8 @@ function renderLicenseBadge(license) {
   return licenseInfo[license]
 }
 
+
+// takes data from user prompt and generates a README markdown style response
 function generateMarkdown(data) {
   let licenseInfo = renderLicenseBadge(data.license);
   return `# ${data.title}
@@ -49,7 +50,7 @@ function generateMarkdown(data) {
   ## License
 
   ![License](${licenseInfo.badge})
-  (${licenseInfo.url})
+  Link to license info: ${licenseInfo.url}
 
   ## How to Contribute
 
