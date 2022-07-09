@@ -1,10 +1,6 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer')
-
-// TODO: Create a function to write README file
-function writeToFile(fileContent) {
-
-}
+const generateMarkdown = require('./utils/generateMarkdown')
+const writeToFile = require('./utils/generateFile')
 
 const promptUser = () => {
     return inquirer
@@ -99,5 +95,6 @@ const promptUser = () => {
 
 
 promptUser().then(userResponse => {
-    writeToFile('README.md', userResponse)
+    const markdownData = generateMarkdown(userResponse)
+    writeToFile(markdownData);
 })
