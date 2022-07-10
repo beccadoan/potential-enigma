@@ -125,4 +125,5 @@ const promptUser = () => {
 promptUser().then(userResponse => {
     const markdownData = generateMarkdown(userResponse)
     writeToFile(markdownData);
+    console.log('Congratulations! Your new README can now be found in dist/README.md');
 })
