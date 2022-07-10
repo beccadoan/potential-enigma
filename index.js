@@ -9,6 +9,32 @@ const promptUser = () => {
         .prompt([
             {
                 type: 'input',
+                name: 'username',
+                message: "What is your github Username?",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter github Username');
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
+                name: 'email',
+                message: "What is your e-mail address?",
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter your e-mail address');
+                        return false;
+                    }
+                }
+            },
+            {
+                type: 'input',
                 name: 'title',
                 message: "What is the name of the project you're creating a README for?",
                 validate: nameInput => {

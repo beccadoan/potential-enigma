@@ -27,6 +27,7 @@ function renderLicenseBadge(license) {
 function generateMarkdown(data) {
   let licenseInfo = renderLicenseBadge(data.license);
   return `# ${data.title}
+  ![License](${licenseInfo.badge})
 
   ## Description
 
@@ -38,6 +39,7 @@ function generateMarkdown(data) {
   - [Usage](#usage)
   - [Credits](#credits)
   - [License](#license)
+  - [Questions](#questions)
 
   ## Installation
 
@@ -49,7 +51,8 @@ function generateMarkdown(data) {
 
   ## License
 
-  ![License](${licenseInfo.badge})
+ 
+  This project is convered under the ${data.license} license. For more info, follow the link.
   Link to license info: ${licenseInfo.url}
 
   ## How to Contribute
@@ -59,6 +62,14 @@ function generateMarkdown(data) {
   ## Tests
 
   ${data.tests}
+
+  ## Questions
+
+  If you have any questions about this project feel free to reach out to me.
+
+  Email: ${data.email}
+  
+  GitHub: github.com/${data.username}
 `;
 }
 
